@@ -12,7 +12,7 @@ jobs:
           token: ${{ secrets.ACTION_TOKEN }}
       - name: Fetch Google Sheet data
         run: |
-          curl -sL "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZkdTHcPfx5miVCuhwXWecvtsj3M4se_FXd2KHNH9C6jDyjgq-PMqwS7MGv0526yDIVVxpbo1mO_n3/pub?gid=1233062282&single=true&output=csv" -o news.csv
+          curl -sL "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZkdTHcPfx5miVCuhwXWecvtsj3M4se_FXd2KHNH9C6jDyjgq-PMqwS7MGv0526yDIVVxpbo1mO_n3/pub?output=csv" -o news.csv
           python3 -c '
           import csv, json
           with open("news.csv") as f:
